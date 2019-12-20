@@ -1,0 +1,18 @@
+<h2>Trainers</h2>
+<ul class="trainers">
+    <li *ngFor="let trainer of trainers">
+        <a routerLink="/trainers/detail/{{trainer.id}}">
+            <span class="badge">{{trainer.id}}</span> {{trainer.nome}}
+        </a>
+        <button class="delete" title="delete trainer" (click)="delete(trainer)">x</button>
+    </li>
+</ul>
+
+<div>
+    <label> Trainer name:
+        <input #trainerName />
+    </label>
+    <button (click)="add(trainerName.value); trainerName.value=''">
+        add
+    </button>
+</div>
